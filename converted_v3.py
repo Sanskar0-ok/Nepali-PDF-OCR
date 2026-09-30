@@ -3,6 +3,7 @@
 # ============================================================
 from fastapi.middleware.cors import CORSMiddleware
 
+import traceback
 import os
 import re
 import shutil
@@ -1758,7 +1759,7 @@ async def convert_pdf(
 
                 if not chunk:
                     break
-                buffer.write(chunk)
+                
 
                 total_size += len(chunk)
 
@@ -1766,9 +1767,7 @@ async def convert_pdf(
                     return {
                         "error": "PDF is too large. Maximum size is 50 MB."
                     }
-
-        buffer.write(chunk)
-
+                buffer.write(chunk)
         pdf = pymupdf.open(pdf_path)
 
         try:
