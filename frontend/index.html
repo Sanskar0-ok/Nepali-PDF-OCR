@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nepali PDF Viewer</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div>
+                <h1>Nepali PDF Viewer</h1>
+                <p>View, select, copy and print text from Nepali PDFs.</p>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <section class="upload-card">
+
+            <div class="upload-content">
+
+                <div class="upload-text">
+                    <h2>Open a PDF</h2>
+                    <p>
+                        Select a PDF file to extract and display
+                        selectable Nepali text.
+                    </p>
+                </div>
+
+                <div class="upload-controls">
+
+                    <label class="file-button">
+                        <span>Choose PDF</span>
+                        <input
+                            type="file"
+                            id="pdfFile"
+                            accept=".pdf,application/pdf"
+                        >
+                    </label>
+
+                    <button
+                        id="convertBtn"
+                        class="primary-button"
+                        type="button"
+                    >
+                        Open PDF
+                    </button>
+
+                </div>
+
+                <div
+                    id="fileName"
+                    class="file-name"
+                >
+                    No file selected
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div
+            id="status"
+            class="status"
+            aria-live="polite"
+        ></div>
+
+
+        <section
+            id="viewer"
+            class="viewer"
+        ></section>
+
+    </main>
+
+
+    <script src="/static/app.js"></script>
+
+</body>
+</html>

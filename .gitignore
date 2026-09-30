@@ -1,0 +1,10 @@
+@"
+.venv/
+__pycache__/
+*.pyc
+*.pdf
+*.log
+temp/
+tmp/
+"@ | Out-File -Encoding utf8 .gitignore
+models/
