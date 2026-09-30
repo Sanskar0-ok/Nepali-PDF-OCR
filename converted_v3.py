@@ -1,6 +1,7 @@
 # ============================================================
 # WEB APP - FAST SELECTABLE PDF VIEWER
 # ============================================================
+from fastapi.middleware.cors import CORSMiddleware
 
 import os
 import re
@@ -1659,7 +1660,13 @@ def process_page_for_web(
 app = FastAPI(
     title="Nepali PDF Viewer"
 )
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 BASE_DIR = (
     Path(__file__)
