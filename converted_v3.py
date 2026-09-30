@@ -1758,6 +1758,7 @@ async def convert_pdf(
 
                 if not chunk:
                     break
+                buffer.write(chunk)
 
                 total_size += len(chunk)
 
